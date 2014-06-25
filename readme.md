@@ -1,7 +1,9 @@
 BĂ
 ===
 
-<img src="screenshot.png" style="display: block; margin: 0 auto" alt="Screenshot">
+<p align="center">
+  <img src="screenshot.png" alt="Screenshot">
+</p>
 
 BĂ is a quick and dirty [Yo](https://itunes.apple.com/us/app/yo./id834335592?mt=8) clone I wrote in about 3 hours. Deployed at [http://ba-dev.herokuapp.com](http://ba-dev.herokuapp.com). Not finished by any degree, but it sorta works.
 
