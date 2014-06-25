@@ -45,7 +45,7 @@ Template.friends.events({
     sendMessage(this.to);
   },
 
-  'click button.add': function() {
+  'click div.add': function() {
     var myId = Meteor.user()._id;
     var input = $('input.username').val();
 
@@ -86,9 +86,11 @@ navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mo
 
 Messages.find().observe({
   added: function(msg) {
-    if (navigator.vibrate) {
-      navigator.vibrate([500]);
-      // window.airhorn.play();
+    if (msg.to && msg.to === Meteor.user()._id) {
+      if (navigator.vibrate) {
+        navigator.vibrate([500]);
+        // window.airhorn.play();
+      }
     }
   }
 });

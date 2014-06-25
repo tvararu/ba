@@ -5,7 +5,6 @@
 
 <body>
   {{#if currentUser}}
-    {{> loginButtons}}
     {{> main}}
   {{else}}
     {{> loginButtons}}
@@ -13,11 +12,9 @@
 </body>
 
 <template name="main">
-  {{> users}}
-
-  {{> friends}}
-
-  {{> messages}}
+  <div class="app">
+    {{> friends}}
+  </div>
 </template>
 
 <template name="users">
@@ -30,14 +27,14 @@
 </template>
 
 <template name="friends">
-  <h1>Friends</h1>
-  <input type="text" class="username" value="">
-  <button class="add">Add friend</button>
+  <!-- <h1>Friends</h1> -->
   <ul>
     {{#each friends}}
-      <li><button class="user">{{username to}}</button></li>
+      <li><span class="user">{{username to}}</span></li>
     {{/each}}
   </ul>
+  <input type="text" class="username" value="">
+  <div class="add">+</div>
 </template>
 
 <template name="messages">
