@@ -88,7 +88,7 @@ Messages.find().observe({
   added: function(msg) {
     if (navigator.vibrate) {
       navigator.vibrate([500]);
-      window.airhorn.play();
+      // window.airhorn.play();
     }
   }
 });
