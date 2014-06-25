@@ -75,12 +75,20 @@ Template.friends.events({
   }
 });
 
+window.airhorn = new buzz.sound('/sounds/airhorn', {
+  formats: ['wav'],
+  preload: true,
+  autoplay: false,
+  loop: false
+});
+
 navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
 
 Messages.find().observe({
   added: function(msg) {
     if (navigator.vibrate) {
       navigator.vibrate([500]);
+      window.airhorn.play();
     }
   }
 });
