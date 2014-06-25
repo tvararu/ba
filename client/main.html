@@ -1,5 +1,5 @@
 <head>
-  <title>ba</title>
+  <title>BĂ</title>
 </head>
 
 <body>
@@ -12,7 +12,39 @@
 </body>
 
 <template name="main">
-  <p>
-    Hey!
-  </p>
+  {{> users}}
+
+  {{> friends}}
+
+  {{> messages}}
+</template>
+
+<template name="users">
+  <h1>All users</h1>
+  <ul>
+    {{#each users}}
+      <li>{{username}}</li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="friends">
+  <h1>Friends</h1>
+  <input type="text" class="username" value="">
+  <button class="add">Add friend</button>
+  <ul>
+    {{#each friends}}
+      <li><button class="user">{{username to}}</button></li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="messages">
+  <h1>Messages</h1>
+  <button class="reset">Reset</button>
+  <ul>
+    {{#each messages}}
+      <li>{{username from}} to {{username to}}</li>
+    {{/each}}
+  </ul>
 </template>
