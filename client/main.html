@@ -1,0 +1,18 @@
+<head>
+  <title>ba</title>
+</head>
+
+<body>
+  {{#if currentUser}}
+    {{> loginButtons}}
+    {{> main}}
+  {{else}}
+    {{> loginButtons}}
+  {{/if}}
+</body>
+
+<template name="main">
+  <p>
+    Hey!
+  </p>
+</template>
