@@ -75,7 +75,19 @@ Template.friends.events({
   }
 });
 
+navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+
+Messages.find().observe({
+  added: function(msg) {
+    if (navigator.vibrate) {
+      navigator.vibrate([500]);
+    }
+  }
+});
+
 var sendMessage = function(to) {
+
+
   var from = Meteor.user()._id;
 
   Messages.insert({
